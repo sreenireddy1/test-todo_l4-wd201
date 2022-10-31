@@ -8,33 +8,15 @@ const todoList = () => {
   };
 
   const overdue = () => {
-    let overduee = [];
-    for (let i = 0; i < all.length; i++) {
-      if (all[i].dueDate < today && all[i].completed == false) {
-        overduee.push(all[i]);
-      }
-    }
-    return overduee;
+    return all.filter((item) => item.dueDate < today);
   };
 
   const dueToday = () => {
-    let due = [];
-    for (let i = 0; i < all.length; i++) {
-      if (all[i].dueDate == today) {
-        due.push(all[i]);
-      }
-    }
-    return due;
+    return all.filter((item) => item.dueDate === today);
   };
 
   const dueLater = () => {
-    let due = [];
-    for (let i = 0; i < all.length; i++) {
-      if (all[i].dueDate > today && all[i].completed == false) {
-        due.push(all[i]);
-      }
-    }
-    return due;
+    return all.filter((item) => item.dueDate > today);
   };
 
   const toDisplayableList = (list) => {
@@ -48,6 +30,7 @@ const todoList = () => {
       .join("\n");
     return res;
   };
+
   return {
     all,
     add,

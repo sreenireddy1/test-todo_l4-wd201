@@ -1,19 +1,11 @@
-{ "env": { 
-    "commonjs": true,
-     "es2021": true,
-      "node": true, 
-      "jest": true },
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
     "extends": "eslint:recommended",
     "overrides": [
-        {
-            "files":[
-                "**/*.spec.js",
-                "**/*.spec.jsx"
-            ],
-            "env":{
-                "jest":true
-            }
-        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest"

@@ -35,36 +35,36 @@ describe("To do list test suite", () => {
     expect(all[0].completed).toBe(true);
   });
   test("Should retrieve overdue items", () => {
-    let overduee = overdue();
-    let count = overduee.length;
+    let overdue_todos = overdue();
+    let count = overdue_todos.length;
     add({
       title: "Test todo2",
       completed: false,
       dueDate: yesterday,
     });
-    overduee = overdue();
-    expect(overduee.length).toBe(count + 1);
+    overdue_todos = overdue();
+    expect(overdue_todos.length).toBe(count + 1);
   });
   test("Should retrieve due today items", () => {
-    let toduee = dueToday();
-    let count = toduee.length;
+    let dueToday_todos = dueToday();
+    let count = dueToday_todos.length;
     add({
       title: "Test todo3",
       completed: false,
       dueDate: today,
     });
-    toduee = dueToday();
-    expect(toduee.length).toBe(count + 1);
+    dueToday_todos = dueToday();
+    expect(dueToday_todos.length).toBe(count + 1);
   });
   test("Should retrieve due later items", () => {
-    let tomoduee = dueLater();
-    let count = tomoduee.length;
+    let dueLater_todos = dueLater();
+    let count = dueLater_todos.length;
     add({
       title: "Test todo4",
       completed: false,
       dueDate: tomorrow,
     });
-    tomoduee = dueLater();
-    expect(tomoduee.length).toBe(count + 1);
+    dueLater_todos = dueLater();
+    expect(dueLater_todos.length).toBe(count + 1);
   });
 });

@@ -21,11 +21,10 @@ const todoList = () => {
 
   const toDisplayableList = (list) => {
     let res = list
-      .map(
-        (item) =>
-          `${item.completed ? "[x] " : "[ ] "}${item.title} ${
-            item.dueDate === today ? " " : item.dueDate
-          }`
+      .map((item) =>
+        `${item.completed ? "[x] " : "[ ] "}${item.title} ${
+          item.dueDate === today ? " " : item.dueDate
+        }`.trim()
       )
       .join("\n");
     return res;
